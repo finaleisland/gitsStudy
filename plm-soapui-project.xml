@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2053c0f3-79e9-47c2-81d7-d21042df74ad" activeEnvironment="Default" name="plm" resourceRoot="" soapui-version="5.1.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a92dde08-64fb-44ee-a930-d1ddfec9a773" wsaVersion="NONE" name="TaskwsServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://ws.htdz.com/}TaskwsServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:2000/webservice/TaskwsService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:2000/webservice/TaskwsService?wsdl"><con:part><con:url>http://localhost:2000/webservice/TaskwsService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="TaskwsServiceImplService" targetNamespace="http://ws.htdz.com/" xmlns:ns1="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.htdz.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ws.htdz.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getTaskMsg" type="tns:getTaskMsg"/>
+      <xs:element name="getTaskMsgResponse" type="tns:getTaskMsgResponse"/>
+      <xs:complexType name="getTaskMsg">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="planstartdate" type="xs:string"/>
+          <xs:element minOccurs="0" name="planenddate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTaskMsgResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getTaskMsgResponse">
+    <wsdl:part element="tns:getTaskMsgResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTaskMsg">
+    <wsdl:part element="tns:getTaskMsg" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TaskwsService">
+    <wsdl:operation name="getTaskMsg">
+      <wsdl:input message="tns:getTaskMsg" name="getTaskMsg"></wsdl:input>
+      <wsdl:output message="tns:getTaskMsgResponse" name="getTaskMsgResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaskwsServiceImplServiceSoapBinding" type="tns:TaskwsService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getTaskMsg">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTaskMsg">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTaskMsgResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaskwsServiceImplService">
+    <wsdl:port binding="tns:TaskwsServiceImplServiceSoapBinding" name="TaskwsServiceImplPort">
+      <soap:address location="http://localhost:2000/webservice/TaskwsService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:2000/webservice/TaskwsService</con:endpoint></con:endpoints><con:operation id="d14a1bd4-bc5c-49fc-bfa1-949654c0b688" isOneWay="false" action="" name="getTaskMsg" bindingOperationName="getTaskMsg" type="Request-Response" outputName="getTaskMsgResponse" inputName="getTaskMsg" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="67295bd7-7267-4181-bb55-84d319cb3749" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:2000/webservice/TaskwsService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.htdz.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getTaskMsg>
+         <!--Optional:-->
+         
+         <!--Optional:-->
+         <planstartdate>2020-08-12 00:00:00.000</planstartdate><planenddate>2020-08-28 00:00:00.000</planenddate>
+      </ws:getTaskMsg>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.htdz.com/TaskwsService/getTaskMsg"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>
